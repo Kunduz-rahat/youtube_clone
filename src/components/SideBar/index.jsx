@@ -1,8 +1,8 @@
 import { Stack } from "@mui/material";
 import {categories} from '../../utils/constants'
 
-export default function SideBar() {
-	const selectedCategory = "New"
+export default function SideBar({selectedCategory, setSelectedCategory}) {
+
   return (
 	 <Stack direction="row"
 	 sx={{overflowY:"auto",
@@ -12,10 +12,13 @@ export default function SideBar() {
 	{
 		categories.map((category)=>(
 			<button className="category-btn" style={{
-				background:category.name ===selectedCategory && "#fc1503"
-			}}>
-				<span>{category.icon}</span>
-				<span>{category.name}</span>
+				background:category.name ===selectedCategory && "#fc1503",
+				color:"white"
+			}}
+			key={category.name}
+			onClick={()=>setSelectedCategory(category.name)}>
+				<span style={{color:category.name === selectedCategory? "white":'red', marginRight:"15px"}}>{category.icon}</span>
+				<span style={{opacity:category.name === selectedCategory ? "1":'0.8'}}>{category.name}</span>
 			</button>
 		))
 	}
