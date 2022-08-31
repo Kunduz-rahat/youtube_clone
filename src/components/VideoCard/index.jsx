@@ -1,7 +1,19 @@
-import React from 'react'
+import {Link} from 'react-router-dom';
+import { Typography, Card, CardContent, CardMedia } from '@mui/material';
+import { CheckCircle } from '@mui/icons-material';
+import { demoChannelTitle, demoChannelUrl, demoProfilePicture, demoThumbnailUrl, demoVideoUrl } from '../../utils/constants';
 
-export default function VideoCard() {
+export default function VideoCard({video:{id:{videoId}, snippet}}) {
+
   return (
-	 <div>VideoCart</div>
+	 <Card>
+   <Link to={videoId? `/video/${videoId}` : demoVideoUrl}>
+    <CardMedia image={snippet?.thumbnails?.high?.url} 
+    alt={snippet?.title}
+    sx={{width:378, height:180}}
+
+    />
+   </Link>
+   </Card>
   )
 }
