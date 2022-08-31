@@ -4,11 +4,13 @@ import {Box} from '@mui/material';
 import VideoDetail from './pages/VideoDetail';
 import ChannelDetail from './pages/ChannelDetail';
 import Search from './pages/Search';
+import Header from './components/Header';
 
 function App() {
   return (
   <BrowserRouter>
   <Box sx={{backgroundColor:"#000"}}>
+  <Header/>
   <Routes>
       <Route path='/' exact element={<Home/>}/>
       <Route path='/video/:id' element={<VideoDetail/>}/>
