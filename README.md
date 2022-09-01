@@ -1,9 +1,11 @@
 <h1 align="center">
-  <img alt="YouTube Clone" title="YouTube Clone" src=".github/logo.png" width="250" />
+  <img alt="YouTube Clone" title="YouTube Clone" src="https://cdn.pixabay.com/photo/2016/11/19/03/08/youtube-1837872__340.png" width="250" />
 </h1>
 
 
-## 💻 
+# 💻 YouTube Clone
+
+
 
 Клон приложения YouTube был разработан только в учебных целях и для собственного вызова.
 
