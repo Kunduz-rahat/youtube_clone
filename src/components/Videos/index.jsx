@@ -1,13 +1,13 @@
 import React from 'react';
-import { Stack } from '@mui/material';
-import { Box } from '@mui/system';
+import { Stack, Box } from '@mui/material';
+
 import VideoCard from '../VideoCard';
 import ChannelCard from '../ChannelCard';
 
-export default function Videos({videos}) {
-	
+export default function Videos({videos, direction}) {
+	if(!videos?.length) return "Loading ..."
   return (
-	 <Stack direction="row" flexWrap="wrap"
+	 <Stack direction={direction || "row"} flexWrap="wrap"
 	 justifyContent="start" gap={2}>
 	 {
 		videos.map((item, idx) =>(
