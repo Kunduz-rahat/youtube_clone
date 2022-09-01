@@ -3,7 +3,7 @@ import {Box, Car, CardContent, CardMedia, Typography} from '@mui/material';
 import {Link} from 'react-router-dom';
 import { demoProfilePicture } from '../../utils/constants';
 
-export default function ChannelCard({channelDetail}) {
+export default function ChannelCard({channelDetail, marginTop}) {
   return (
 	 <Box sx={{boxShadow:"none",
    borderRadius:"20px", 
@@ -12,7 +12,8 @@ export default function ChannelCard({channelDetail}) {
 	alignItems:'center',
 	width:{xs:"356px", md:"320px"},
 	height:"356px",
-	margin:"auto"}}>
+	margin:"auto",
+	marginTop}}>
   <Link to={`/channel/${channelDetail?.id?.channelId}`}>
    <CardContent sx={{display:"flex",
    flexDirection:"column",
@@ -28,8 +29,7 @@ export default function ChannelCard({channelDetail}) {
 {channelDetail?.snippet?.title}
 <CheckCircle sx={{fontSize:16, color:"gray", ml:"5px"}}/>
 {channelDetail?.statistics?.subscriberCount && (
-	<Typography>Subscribers
-		{parseInt(channelDetail?.statistics?.subscriberCount).toLocaleString()} 
+	<Typography>Subscribers {parseInt(channelDetail?.statistics?.subscriberCount).toLocaleString()} 
 	</Typography>
 )}
 </Typography>
